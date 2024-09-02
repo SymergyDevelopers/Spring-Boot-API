@@ -53,5 +53,11 @@ public class CompanyController {
         return ResponseEntity.noContent().build();
     }
 
+    @DeleteMapping()
+    public ResponseEntity<Void> deleteCompany(){
+        companyService.deleteAllCompanies();
+        return ResponseEntity.noContent().build();
+    }
+
 
 }

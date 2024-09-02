@@ -32,11 +32,16 @@ public class CompanyService {
         company.setOpeningTime(companyDetail.getOpeningTime());
         company.setClosingTime(companyDetail.getClosingTime());
         company.setLocationOfOperation(companyDetail.getLocationOfOperation());
+        company.setServiceOffered(company.getServiceOffered());
         return companyRepository.save(company);
     }
 
     public void deleteCompany(Long id){
         companyRepository.deleteById(id);
+    }
+
+    public void deleteAllCompanies(){
+        companyRepository.deleteAll();
     }
 
 }

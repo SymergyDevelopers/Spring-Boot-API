@@ -26,15 +26,29 @@ public class Company {
 
     private String locationOfOperation;
 
+    private String pricing;
+
+    private String serviceOffered;
+
     public Company(){}
 
-    public Company(String name,String logoUrl, String daysOfOperation, LocalTime openingTime, LocalTime closingTime, String locationOfOperation){
+    public Company(String name,String logoUrl, String daysOfOperation, LocalTime openingTime, LocalTime closingTime, String locationOfOperation, String pricing,String serviceOffered){
         this.name = name;
         this.logoUrl = logoUrl;
         this.daysOfOperation = daysOfOperation;
         this.openingTime = openingTime;
         this.closingTime = closingTime;
         this.locationOfOperation = locationOfOperation;
+        this.pricing = pricing;
+        this.serviceOffered = serviceOffered;
+    }
+
+    public String getPricing() {
+        return pricing;
+    }
+
+    public void setPricing(String pricing) {
+        this.pricing = pricing;
     }
 
     public String getName() {
@@ -91,5 +105,13 @@ public class Company {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getServiceOffered() {
+        return serviceOffered;
+    }
+
+    public void setServiceOffered(String serviceOffered) {
+        this.serviceOffered = serviceOffered;
     }
 }

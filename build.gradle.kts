@@ -9,7 +9,7 @@ version = "0.0.1-SNAPSHOT"
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(22)
+		languageVersion = JavaLanguageVersion.of(17)
 	}
 }
 
@@ -24,11 +24,8 @@ repositories {
 }
 
 tasks.jar {
-	manifest {
-		attributes["Main-Class"] = "com.symergylimited.symergy.wastecollectors.WastecollectorsendpointApplication"
-	}
+	enabled = true
 }
-
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
@@ -44,4 +41,8 @@ dependencies {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+tasks.bootJar {
+	mainClass.set("com.symergylimited.symergy.wastecollectorsendpoint.WastecollectorsendpointApplication") // Replace with your main class
 }
